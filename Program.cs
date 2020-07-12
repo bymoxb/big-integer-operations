@@ -11,10 +11,6 @@ namespace desarrollo_prueba_parcial
             string n2 = "389274293874928365289572934029340293742398742386578256298374298374298374298374928374289374239856223423897";
 
             // Page to test the operations: https://www.boxentriq.com/code-breaking/big-number-calculator
-            
-            string r_s = "598659261269782229563437109010437716839808126496326441027760812067164357771268402118275972715153571616388";
-            string r_r = "179889326480074501015708759048242870644989358276830071568987784681432390825481454630302775764558875231406";
-            string r_m = "81508185330656637092516455327024469016279606632554671377019232226791636758245133407225934780305376540521965147401916385220018340973796894136635843846385714723655436486619852659250497032555763883888228245357427";
 
             // Make operations
             string suma = prepararSuma(n1, n2);
@@ -24,9 +20,9 @@ namespace desarrollo_prueba_parcial
             // Results
             Console.WriteLine($"N1: {n1}\nN2: {n2}\n");
 
-            Console.WriteLine($"Suma: {suma} \t correto: {r_s == suma}");
-            Console.WriteLine($"Rest: {resta} \t correto: {r_r == resta}");
-            Console.WriteLine($"Mult: {multiplicacion} \t correto: {r_m == multiplicacion}");
+            Console.WriteLine($"Suma: {suma}");
+            Console.WriteLine($"Rest: {resta}");
+            Console.WriteLine($"Mult: {multiplicacion}");
         }
 
         // MULTIPLICACION
