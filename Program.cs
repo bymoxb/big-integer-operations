@@ -37,6 +37,15 @@ namespace desarrollo_prueba_parcial
         // DIVISION
         static string prepararDivision(string n1, string n2)
         {
+            if (n1.Length > n2.Length)
+            {
+                n2 = igualarStrings(n2, n1.Length);
+            }
+            else if (n2.Length > n1.Length)
+            {
+                n1 = igualarStrings(n1, n2.Length);
+            }
+
             string result = n1;
 
             int cont = 0;
@@ -47,7 +56,27 @@ namespace desarrollo_prueba_parcial
                 cont++;
             }
 
-            return cont + ";" + result;
+            return cont + ";" + eliminarCerosIzq(result);
+        }
+
+        static string eliminarCerosIzq(string n)
+        {
+            string nuevo = "";
+            int cont = -1;
+
+            for (int i = 0; i < n.Length; i++)
+            {
+
+                cont++;
+                if (n[i] != '0')
+                {
+                    break;
+                }
+            }
+
+            nuevo = n.Substring(cont, n.Length - cont);
+
+            return nuevo.Length <= 0 ? "0" : nuevo;
         }
 
         // MULTIPLICACION
@@ -105,7 +134,7 @@ namespace desarrollo_prueba_parcial
                 resultado = prepararSuma(resultado, res[i]);
             }
 
-            return resultado;
+            return eliminarCerosIzq(resultado);
         }
 
         // RESTA
@@ -283,4 +312,3 @@ namespace desarrollo_prueba_parcial
 
     }
 }
-
