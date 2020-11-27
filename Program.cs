@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.IO;
 
 namespace desarrollo_prueba_parcial
 {
@@ -6,9 +7,15 @@ namespace desarrollo_prueba_parcial
     {
         static void Main(string[] args)
         {
+            // Path
+            string path = Directory.GetCurrentDirectory();
+            string path_file = $"{path}/numbers2.txt";
+
             // Declaring numbers
-            string n1 = "209384967394853864273864174981097423097409384109748184729386513692865983472893473743986598475297348192491";
-            string n2 = "389274293874928365289572934029340293742398742386578256298374298374298374298374928374289374239856223423897";
+            string[] numbers = System.IO.File.ReadAllLines(path_file);
+
+            string n1 = numbers[0];
+            string n2 = numbers[1];
 
             // Page to test the operations: https://www.boxentriq.com/code-breaking/big-number-calculator
 
@@ -16,6 +23,7 @@ namespace desarrollo_prueba_parcial
             string suma = prepararSuma(n1, n2);
             string resta = prepararResta(n1, n2);
             string multiplicacion = prepararMultiplicacion(n1, n2);
+            string division = prepararDivision(n1, n2);
 
             // Results
             Console.WriteLine($"N1: {n1}\nN2: {n2}\n");
@@ -23,6 +31,23 @@ namespace desarrollo_prueba_parcial
             Console.WriteLine($"Suma: {suma}");
             Console.WriteLine($"Rest: {resta}");
             Console.WriteLine($"Mult: {multiplicacion}");
+            Console.WriteLine($"Divi: {division}");
+        }
+
+        // DIVISION
+        static string prepararDivision(string n1, string n2)
+        {
+            string result = n1;
+
+            int cont = 0;
+
+            while (!esMenor(result, n2))
+            {
+                result = prepararResta(result, n2);
+                cont++;
+            }
+
+            return cont + ";" + result;
         }
 
         // MULTIPLICACION
