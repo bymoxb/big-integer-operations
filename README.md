@@ -5,7 +5,7 @@ Algoritmos en c# para simples operaciones matemáticas con enteros extremetament
 - Suma
 - Resta
 - Multiplicación
-- División (Próximamente)
+- División
 
 Códico completo en el archivo [Program.cs](Program.cs)
 
