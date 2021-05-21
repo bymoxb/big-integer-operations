@@ -7,8 +7,6 @@ Algoritmos en c# para simples operaciones matemáticas con enteros extremetament
 - Multiplicación
 - División
 
-Códico completo en el archivo [Program.cs](Program.cs)
-
 ENTRADA
 ```csharp
 string n1 = "209384967394853864273864174981097423097409384109748184729386513692865983472893473743986598475297348192491";
